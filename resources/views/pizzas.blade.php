@@ -33,12 +33,13 @@
 .title {
     font-size: 2em;
     font-weight: bold;
-    color: #333; /* You can choose your preferred text color */
+    color: #333; 
+    margin-bottom: 50px;
 }
 
 p {
     font-size: 1.2em;
-    color: #666; /* You can choose your preferred text color */
+    color: #666; 
 }
 
 </style>
@@ -49,6 +50,23 @@ p {
                 Pizza List
             </div>
             <p>{{ $type }} - {{ $base }} - {{ $price }}</p>
+            
+            @if($price > 15)
+                <p>this pizza is expensive</p>
+            @elseif($price < 5)
+                <p>pizza is cheap</p>
+            @else
+                <p>this pizza is normally priced</p>
+            @endif
+
+            @unless($base == 'cheesy crust')
+                <p>you don't have a cheesy crust</p>
+            @endunless
+
+            @php
+                $name = 'alfie';
+                echo($name);
+            @endphp
         </div>
     </div>
 </body>
