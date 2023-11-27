@@ -29,4 +29,9 @@ class PizzaController extends Controller
     public function create(){
         return view('pizzas.create');
     }
+
+    public function store(){
+        error_log(request('name'));
+        return redirect('/');
+    }
 };
