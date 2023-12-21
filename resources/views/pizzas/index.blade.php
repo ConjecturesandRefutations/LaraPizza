@@ -1,13 +1,4 @@
-@extends('layout.layout')
-
-@section('content')
-<div class="flex-center position-ref full-height"></div>
-        <div class="content">
-            <div class="title m-b-md">
-                Pizza List
-            </div>
-            
-{{--             @for($i = 0; $i < 5; $i++)
+            {{--             @for($i = 0; $i < 5; $i++)
                 <p>the value of i is {{ $i }}</p>
             @endfor --}}
 {{-- 
@@ -15,29 +6,19 @@
                 <p>{{ $pizzas[$i]['type'] }}</p>
             @endfor --}}
 
-            @foreach($pizzas as $pizza)
-                <div>
-                    {{ $pizza->name }} - {{ $pizza->type }} - {{ $pizza->base }}
+            @extends('layout.layout')
+
+            @section('content')
+            <div class="wrapper pizza-index">
+              <h1>Pizza Orders</h1>
+              @foreach($pizzas as $pizza)
+                <div class="pizza-item">
+                  <img src="img/pizzaa.webp" alt="pizza icon" style="height: 50px; width: 50px;">
+                  <h4><a href="/pizzas/{{ $pizza->id }}">{{ $pizza->name }}</a></h4>
                 </div>
-            @endforeach
+              @endforeach
+            
+            </div>
+            
+            @endsection
 
-        </div>
-    </div>
-@endsection
-
-{{-- @if($price > 15)
-<p>this pizza is expensive</p>
-@elseif($price < 5)
-<p>pizza is cheap</p>
-@else
-<p>this pizza is normally priced</p>
-@endif
-
-@unless($base == 'cheesy crust')
-<p>you don't have a cheesy crust</p>
-@endunless
-
-@php
-$name = 'alfie';
-echo($name);
-@endphp --}}
