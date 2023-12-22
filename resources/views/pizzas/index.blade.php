@@ -6,7 +6,7 @@
                 <p>{{ $pizzas[$i]['type'] }}</p>
             @endfor --}}
 
-            @extends('layout.layout')
+            @extends('layouts.app')
 
             @section('content')
             <div class="wrapper pizza-index">
