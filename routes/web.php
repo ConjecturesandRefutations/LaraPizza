@@ -32,3 +32,6 @@ Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy']);
     return view('pizzas', $pizza);
 });
  */
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
