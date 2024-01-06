@@ -32,6 +32,9 @@ Route::delete('/pizzas/{id}', [PizzaController::class, 'destroy'])->middleware('
     return view('pizzas', $pizza);
 });
  */
-Auth::routes();
+
+Auth::routes([
+    'register' => false
+]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
