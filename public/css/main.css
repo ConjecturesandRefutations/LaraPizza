@@ -58,3 +58,9 @@ html, body {
       padding: 12px 0;
       color: #5e2195;
   }
+
+  .wrapper{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  }
